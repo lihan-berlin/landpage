@@ -2,7 +2,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react'
 
-const footerNavigation = {
+interface NavigationItem {
+  name: string
+  href: string
+}
+
+interface FooterNavigation {
+  solutions: NavigationItem[]
+  services: NavigationItem[]
+  company: NavigationItem[]
+  support: NavigationItem[]
+  legal: NavigationItem[]
+}
+
+const footerNavigation: FooterNavigation = {
   solutions: [
     { name: 'PV + Battery + EV Charging', href: '/solutions/pv-battery-ev' },
     { name: 'Battery Trading Hubs', href: '/solutions/battery-trading' },
@@ -35,7 +48,15 @@ const footerNavigation = {
   ],
 }
 
-const offices = [
+interface Office {
+  city: string
+  country: string
+  address: string
+  phone: string
+  email: string
+}
+
+const offices: Office[] = [
   {
     city: 'Berlin',
     country: 'Germany',
