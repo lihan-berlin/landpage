@@ -1,69 +1,57 @@
-import type { Metadata } from 'next'
-import { Playfair_Display, Barlow } from 'next/font/google'
-import '@/styles/globals.css'
-import { cn } from '@/lib/utils'
-import { Navbar } from '@/components/layout/navbar'
-import { Footer } from '@/components/layout/footer'
+import type { Metadata } from 'next';
+import { Playfair_Display, Barlow } from 'next/font/google';
+import '../styles/globals.css';
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-playfair',
   weight: ['400', '700', '800', '900'],
-})
+  display: 'swap',
+});
 
 const barlow = Barlow({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-barlow',
-  weight: ['400', '500', '600', '700'],
-})
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Borochi - Intelligent Energy Solutions',
-    template: '%s | Borochi',
-  },
-  description: 'Powering industry with intelligent energy solutions. Turnkey clean-energy systems for factories, business parks, and hospitals.',
-  keywords: ['Energy Solutions', 'Solar Power', 'Battery Storage', 'EV Charging', 'Energy Management', 'Clean Energy'],
-  authors: [{ name: 'Borochi Team' }],
+  title: 'Borochi - Intelligent Energy Solutions for Industry',
+  description: 'Powering industry with intelligent energy. Turnkey clean-energy systems for factories, business parks, and hospitals that cut operating costs and unlock new revenue streams.',
+  keywords: 'energy solutions, clean energy, solar power, battery storage, EV charging, energy management, industrial energy, renewable energy',
+  authors: [{ name: 'Borochi' }],
   creator: 'Borochi',
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/icon.png',
-    other: [
-      {
-        rel: 'apple-touch-icon-precomposed',
-        url: '/icon.png',
-      },
-      {
-        rel: 'manifest',
-        url: '/manifest.json',
-      },
-    ],
+  publisher: 'Borochi',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://borochi.com'),
+  alternates: {
+    canonical: '/',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    title: 'Borochi - Intelligent Energy Solutions for Industry',
+    description: 'Powering industry with intelligent energy. Turnkey clean-energy systems that cut operating costs and unlock new revenue streams.',
     url: 'https://borochi.com',
-    title: 'Borochi - Intelligent Energy Solutions',
-    description: 'Powering industry with intelligent energy solutions. Turnkey clean-energy systems for factories, business parks, and hospitals.',
     siteName: 'Borochi',
-          images: [
-        {
-          url: '/borochi_logo.png',
-          width: 1200,
-          height: 630,
-          alt: 'Borochi - Intelligent Energy Solutions',
-        },
-      ],
+    images: [
+      {
+        url: '/borochi_logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Borochi - Intelligent Energy Solutions',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Borochi - Intelligent Energy Solutions',
-    description: 'Powering industry with intelligent energy solutions. Turnkey clean-energy systems for factories, business parks, and hospitals.',
-    creator: '@borochi',
+    title: 'Borochi - Intelligent Energy Solutions for Industry',
+    description: 'Powering industry with intelligent energy. Turnkey clean-energy systems that cut operating costs and unlock new revenue streams.',
     images: ['/borochi_logo.png'],
   },
   robots: {
@@ -77,28 +65,29 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-}
+  verification: {
+    // Add your verification tokens here when available
+    // google: 'your-google-verification-token',
+  },
+};
 
-interface RootLayoutProps {
-  children: React.ReactNode
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          playfairDisplay.variable,
-          barlow.variable
-        )}
-      >
-        <div className="relative flex min-h-screen flex-col">
-          <Navbar />
-          <div className="flex-1 pt-16 lg:pt-20">{children}</div>
-          <Footer />
-        </div>
+    <html lang="en" className={`${playfairDisplay.variable} ${barlow.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <meta name="theme-color" content="#237ebc" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${barlow.className} antialiased`}>
+        {children}
       </body>
     </html>
-  )
+  );
 } 

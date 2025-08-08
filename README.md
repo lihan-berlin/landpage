@@ -1,143 +1,148 @@
-# Borochi
+# Borochi Landing Page
 
-A modern, scalable web application built with Next.js 14, TypeScript, and Tailwind CSS.
+A sophisticated, modern landing page for Borochi - an intelligent energy solutions company. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## 🚀 Features
+## Features
 
-- **⚡ Next.js 14** - Latest React framework with App Router
-- **🔷 TypeScript** - Type-safe development with strict mode
-- **🎨 Tailwind CSS** - Utility-first CSS framework
-- **🧩 shadcn/ui** - Beautiful, reusable components
-- **📱 Responsive Design** - Mobile-first approach
-- **🎯 Material Design 3** - Modern design system
-- **🔧 Developer Experience** - ESLint, Prettier, and more
+- 🎥 Video hero section with animated elements
+- ⚡ Interactive solar ring animations
+- 📱 Fully responsive design
+- 🎨 Brand-consistent color scheme and typography
+- 📧 Contact form with validation
+- 🚀 Optimized performance and SEO
 
-## 📦 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: Radix UI + shadcn/ui
 - **Icons**: Lucide React
-- **Code Quality**: ESLint + Prettier
-- **Package Manager**: npm/yarn/pnpm
+- **Fonts**: Playfair Display & Barlow (Google Fonts)
+- **Animations**: CSS animations with Tailwind
 
-## 🏗️ Project Structure
+## Brand Guidelines
+
+This project follows Borochi's comprehensive design system including:
+
+- **Primary Colors**: Brand Blue (#237ebc), Coral Red (#ff7979), Cyan (#68f1fa)
+- **Typography**: Playfair Display for headlines, Barlow for body text
+- **Visual Elements**: Solar Ring animations and geometric shapes
+- **Design Principles**: Minimalism, consistency, and functionality
+
+## Getting Started
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
 
 ```
 src/
-├── app/                 # Next.js App Router
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Home page
-├── components/         # Reusable components
-│   └── ui/            # shadcn/ui components
-├── lib/               # Utility functions
-├── styles/            # Global styles
-└── types/             # TypeScript type definitions
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   └── page.tsx           # Main landing page
+├── components/
+│   ├── sections/          # Page sections
+│   │   ├── hero.tsx       # Hero section with video
+│   │   ├── modules.tsx    # Product modules
+│   │   ├── contact.tsx    # Contact form
+│   │   └── footer.tsx     # Footer
+│   └── ui/               # Reusable UI components
+│       ├── button.tsx     # Button component
+│       ├── card.tsx       # Card component
+│       ├── section.tsx    # Section wrapper
+│       └── solar-ring.tsx # Animated solar ring
+└── styles/
+    └── globals.css        # Global styles and CSS variables
 ```
 
-## 🚀 Getting Started
+## Sections Overview
 
-### Prerequisites
+### Hero Section
+- Full-screen video background
+- Animated solar ring elements
+- Call-to-action buttons with smooth scrolling
 
-- Node.js 18.17.0 or later
-- npm, yarn, or pnpm
+### Product Modules
+Three main service offerings:
+1. **Tailored Architectures** - PV, Battery, EV Charging solutions
+2. **Smart Energy Management** - AI-powered energy optimization
+3. **Delivery & Service** - Industrial-grade support and guarantees
 
-### Installation
+### Contact Form
+- Lead generation form with validation
+- Company information display
+- Interactive form submission
 
-1. Clone the repository:
+### Footer
+- Company information and global presence
+- Navigation links and legal pages
+
+## Customization
+
+### Colors
+Brand colors are defined in `tailwind.config.ts` and can be customized:
+
+```typescript
+colors: {
+  'brand-blue': '#237ebc',
+  'brand-coral': '#ff7979',
+  'brand-cyan': '#68f1fa',
+  // ... other brand colors
+}
+```
+
+### Typography
+Font configurations are in `src/app/layout.tsx`:
+
+```typescript
+const playfairDisplay = Playfair_Display({ /* config */ });
+const barlow = Barlow({ /* config */ });
+```
+
+### Animations
+Custom animations are defined in `tailwind.config.ts` and `globals.css`.
+
+## Deployment
+
+### Build for Production
 ```bash
-git clone <repository-url>
-cd borochi
+npm run build
+npm start
 ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
+### Deploy to Vercel
+This project is optimized for deployment on Vercel:
 
-3. Run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Deploy automatically
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Performance Features
 
-## 📝 Available Scripts
+- Image optimization with Next.js Image component
+- Font optimization with Google Fonts
+- Video compression and optimization
+- Lazy loading for images and animations
+- SEO optimization with metadata
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
-- `npm run type-check` - Run TypeScript type checking
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
+## Browser Support
 
-## 🎨 Design System
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-This project follows Material Design 3 principles and uses a custom design system built with:
+## License
 
-- **Colors**: Semantic color tokens
-- **Typography**: Inter font family
-- **Spacing**: Consistent spacing scale
-- **Components**: Accessible, reusable UI components
-
-## 🔧 Configuration
-
-### Tailwind CSS
-
-The project uses a custom Tailwind configuration with:
-- CSS variables for theming
-- Custom animations and keyframes
-- Responsive design utilities
-- Typography and form plugins
-
-### TypeScript
-
-Strict TypeScript configuration with:
-- Path mapping for clean imports
-- Strict type checking
-- Modern ES features
-
-## 🌟 Best Practices
-
-- **Components**: Use functional components with TypeScript
-- **Styling**: Utility-first approach with Tailwind CSS
-- **Performance**: Server Components by default, Client Components when needed
-- **Accessibility**: WCAG 2.1 AA compliance
-- **SEO**: Optimized metadata and semantic HTML
-
-## 📖 Documentation
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
-- [Radix UI Documentation](https://www.radix-ui.com)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org) team for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
-- [shadcn](https://twitter.com/shadcn) for the beautiful component library
-- [Radix UI](https://www.radix-ui.com) for the accessible primitives 
+© 2024 Borochi. All rights reserved. 
