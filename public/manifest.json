@@ -1,0 +1,28 @@
+{
+  "name": "Borochi - Intelligent Energy Solutions",
+  "short_name": "Borochi",
+  "description": "Powering industry with intelligent energy solutions. Turnkey clean-energy systems for factories, business parks, and hospitals.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#237ebc",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/"
+} 
