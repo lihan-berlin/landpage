@@ -161,8 +161,8 @@ export const ModulesSection: React.FC = () => {
           key={module.id} 
           background={module.background} 
           padding="lg"
-          className={`animate-slide-up`} 
-          style={{ animationDelay: `${index * 0.2}s` }}
+          className="animate-slide-up" 
+          style={{ animationDelay: `${index * 0.2}s` } as React.CSSProperties}
         >
           <div className="max-w-7xl mx-auto">
             {module.isInteractive ? (
@@ -226,7 +226,7 @@ export const ModulesSection: React.FC = () => {
                           className="group flex items-start gap-4 p-6 bg-white/70 rounded-lg shadow-sm hover:shadow-xl hover:bg-white/90 transition-all duration-500 hover:-translate-y-1 cursor-pointer border border-transparent hover:border-brand-blue/20 animate-slide-up relative overflow-hidden"
                           style={{
                             animationDelay: `${featureIndex * 0.2 + 0.5}s`
-                          }}
+                          } as React.CSSProperties}
                         >
                           <div className="flex-shrink-0 mt-1 relative">
                             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 flex items-center justify-center group-hover:from-brand-blue/20 group-hover:to-brand-blue/30 transition-all duration-300 group-hover:scale-110">
