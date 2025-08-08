@@ -30,32 +30,32 @@ export const HeroSection: React.FC = () => {
       </div>
       
       {/* Logo */}
-      <div className="absolute top-8 left-8 z-20">
+      <div className="absolute top-4 left-4 md:top-8 md:left-8 z-20">
         <Image
           src="/borochi_logo.png"
           alt="Borochi"
           width={150}
           height={50}
-          className="h-12 w-auto"
+          className="h-8 md:h-12 w-auto"
         />
       </div>
       
       {/* Main Content */}
-      <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-20 text-center px-4 max-w-5xl mx-auto mt-20 md:mt-0">
         <div className="animate-fade-in">
-          <h1 className="font-playfair font-extrabold text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
+          <h1 className="font-playfair font-extrabold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
             Powering Industry with{' '}
             <span className="text-brand-cyan">Intelligent Energy</span>
           </h1>
           
-          <p className="font-barlow text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="font-barlow text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
             From factories to business parks and hospitals, Borochi delivers turnkey clean-energy systems that cut operating costs, unlock new revenue streams, and keep critical operations running—today and for decades to come.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
-              className="text-lg px-10 py-4"
+              className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 w-full sm:w-auto"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get Started Today
@@ -63,7 +63,7 @@ export const HeroSection: React.FC = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-lg px-10 py-4 bg-white/10 border-white text-white hover:bg-white hover:text-brand-blue backdrop-blur-sm"
+              className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 w-full sm:w-auto bg-white/10 border-white text-white hover:bg-white hover:text-brand-blue backdrop-blur-sm"
               onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
